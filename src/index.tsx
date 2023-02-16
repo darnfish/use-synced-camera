@@ -22,7 +22,7 @@ export default function useSyncedCamera(useThree: typeof _useThree) {
 			quaternion: camera.quaternion.clone(),
 			rotation: camera.rotation.clone()
 		})
-	}, [emitter])
+	}, [camera, emitter])
 
 	const onCameraUpdate = useCallback(({ position, quaternion, rotation }) => {
 		camera.position.set(position.x, position.y, position.z)
@@ -36,7 +36,7 @@ export default function useSyncedCamera(useThree: typeof _useThree) {
 		return () => {
 			emitter.removeListener('CAMERA_UPDATE', onCameraUpdate)
 		}
-	}, [emitter])
+	}, [emitter, onCameraUpdate])
 
 	return update
 }
