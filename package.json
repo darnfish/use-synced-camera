@@ -1,6 +1,6 @@
 {
   "name": "use-synced-camera",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sync multiple cameras position/quaternion/rotation in react-three/fiber",
   "main": "./lib/index.jsx",
   "repository": "https://github.com/darnfish/use-synced-camera.git",
