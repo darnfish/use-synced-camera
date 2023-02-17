@@ -15,15 +15,37 @@ import useSyncedCamera from 'use-synced-camera'
 import { useThree } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 
-function Scene() {
-	const update = useSyncedCamera(useThree)
-	
-	return (
-		<>
-			<Model />
-			<OrbitControls onChange={update} />
-		</>
-	)
+function SceneA() {
+  const update = useSyncedCamera(useThree)
+  
+  return (
+    <>
+      <Model />
+      <OrbitControls onChange={update} />
+    </>
+  )
+}
+
+function SceneB() {
+  const update = useSyncedCamera(useThree)
+  
+  return (
+    <>
+      <Model />
+      <OrbitControls onChange={update} />
+    </>
+  )
+}
+
+function App() {
+  return (
+    <Canvas>
+      <SceneA>
+    </Canvas>
+    <Canvas>
+      <SceneB>
+    </Canvas>
+  )
 }
 ```
 
